@@ -1,0 +1,33 @@
+// *************************************
+//
+//   Settings
+//   -> Fonts, Variables
+//
+// *************************************
+
+
+// -------------------------------------
+//   Variables
+// -------------------------------------
+
+// ----- Base Colors ----- //
+$black						: #000;
+$white						: #fff;
+$grey						: #aaacb2;
+$red						: #480001;
+$pale-red					: #620406;
+$green						: #1a2f17;
+$pale-green					: #4c5e34;
+
+
+$susy: (
+  gutters: 1/15
+);
+
+*{
+	margin: 0;
+	padding: 0;
+	font-family: sans-serif;
+}
+
+

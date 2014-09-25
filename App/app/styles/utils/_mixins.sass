@@ -1,0 +1,26 @@
+//===================================================== 
+// ROUNDED BLOCKS
+@mixin drawRoundedBlock($border-bottom-size, $background-color, $padding)
+	@include clearfix
+	background: $background-color
+	color: $dark_grey
+	@include border-top-radius($base-largeRadius)
+	@include border-bottom-radius($base-largeRadius*2)
+	@include clearfix()
+	border: solid 1px #d4d4d4
+	border-bottom-width: $border-bottom-size
+	overflow: hidden
+	margin-bottom: rhythm(.5)
+	padding: rhythm($padding)
+	$svg-gradient-shim-threshold: 1 !global
+	@include background-image(linear-gradient(to bottom, #fff, #f2f2f2))
+
+
+
+//===================================================== DRAWBODY
+@mixin defineCol($number)
+	//BREAKPOINT
+	@include breakpoint($large_device)
+		@include span($number of 12)
+		&:last-child
+			@include omega

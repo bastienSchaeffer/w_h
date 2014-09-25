@@ -1,0 +1,26 @@
+// -------------------------------------
+//   Form
+// -------------------------------------
+form
+	.line-form
+		margin-bottom: rhythm(.5)
+	label
+		padding: rhythm(.2)
+		line-height: 1
+		display: block
+	input
+		@include border-radius()
+		outline: none
+		padding: rhythm(.2)
+		border: solid 1px $dark_grey
+		line-height: 1
+		@include box-shadow($dark_grey 0 0 5px)
+
+		&.is_invalid
+			@include box-shadow(#ff0000 0 0 5px)
+
+	@include breakpoint($large_device)
+		label, .line-form
+			display: inline-block
+			margin-bottom: 0
+			margin-right: rhythm(.5)

@@ -1,0 +1,13 @@
+<section id="m-gallery">
+<h3>Features</h3>
+<ul><% _.each(features, function(feature){ %>
+    <li>
+    	<h4><%= feature.featureTitle%><%= feature.id %> </h4>
+        <figure>
+	      <img src="http://placehold.it/480x160" alt="">
+	      <figcaption> <%= feature.featureCopy %></figcaption>
+	    </figure>
+    </li>
+<%});%></ul>
+</section>
+

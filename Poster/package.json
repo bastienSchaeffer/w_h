@@ -1,0 +1,16 @@
+{
+  "name": "Poster",
+  "version": "0.0.0",
+  "description": "Poster for William Hill",
+  "main": "js/rbapp.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Bastien Schaeffer",
+  "license": "ISC",
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-contrib-compass": "^0.5.0",
+    "grunt-contrib-watch": "^0.6.1"
+  }
+}

@@ -1,0 +1,239 @@
+// *************************************
+//
+//   LAYOUT
+//
+// *************************************
+
+//=================================================
+//=================================================
+#m-gallery
+	ul
+		li
+			width: 100%
+			float: left
+			padding: rhythm(.5)
+
+		@include breakpoint($medium_device)
+			li
+				width: 50%
+		@include breakpoint($large_device)
+			li
+				width: 33.3333%
+
+
+
+//=================================================
+//=================================================	
+#m-content, #m-content
+	@include clearfix
+	section
+		@include drawRoundedBlock(4px, none, .6)
+
+		//================
+		article
+			@include defineCol(4)
+			h4
+				@include text-shadow(#fff 0px 1px 0)
+				
+
+//=================================================
+//=================================================
+#header
+	@include drawRoundedBlock(4px, none, 0)
+	@include clearfix
+	position: relative
+	h1
+		color: $dark-blue
+		padding: 0
+		//padding: rhythm(.5) 0
+
+
+	#user
+		#logedIn
+			background: #f2f2f2
+			@include border-radius(5px)
+			padding: rhythm(.5)
+			margin: rhythm(.5)
+			position: absolute
+			top: 0
+			right: 0
+			@include box-shadow(#ccc 0 0 6px)
+			p
+				color: $dark_grey
+				a
+					color: $dark_grey
+					text-decoration: none
+					font-weight: bold
+
+
+
+//=================================================
+//=================================================
+#main
+	@include container
+	position: relative
+
+	aside
+		background: $dark-blue
+		@include transition(all .5s ease-out)
+		position: absolute
+		left: -200px
+		width: 232px
+		height: 100%
+
+		&.is_open
+			left: 0
+
+		&.is_fixed
+			position: fixed
+			top: 0
+
+		#bt-subnav
+			@extend .picto
+			@extend .icon-menu
+			color: $dark_grey
+			float: right
+			padding: rhythm(.2)
+			margin-right: rhythm(.3)
+
+		ul
+			clear: both		
+			li
+				display: block
+				padding: rhythm(.5)
+
+				a
+					text-decoration: none
+					color: $dark_grey
+
+	#m-content
+		@include transition(all .5s ease-out)
+		margin-left: 2em
+		
+
+
+	//=================================
+	@include breakpoint($large_device)
+		aside
+			background: none
+			position: relative
+			left: auto
+			@include span(1 of 4 0)
+
+			&.is_fixed
+				@include transition(all 0 ease-out)
+				@include span(1 of 5 1/8)
+
+			ul
+				li
+					@include drawRoundedBlock(4px, none, .2)
+
+			#bt-subnav
+				display: none
+		#m-content
+			margin-left: 0
+			@include span(3 of 4)
+			@include omega
+
+
+//=================================================
+//=================================================
+
+#m-main-nav
+	clear: both
+	@include clearfix()
+	@include container
+	overflow: visible
+	
+	nav
+		width: 100%
+		z-index: 10
+
+	i#bt-expander
+		color: $dark_grey
+		@include adjust-font-size-to(32px)
+		display: inline-block
+		float: right
+		padding: 0 rhythm(.5)
+		@include clearfix()
+		@extend .picto
+		@extend .icon-menu
+
+	// This is the nav ul
+	ul
+		clear: both
+		@include clearfix
+
+		li
+			text-align: center
+			padding: rhythm(.5) 0 
+			@include transition(all .2s ease-out)
+			@include sassy-button("simple", 0, 1em, #f2f2f2)
+			display: block
+			margin-top: -50px
+
+			&:hover, 
+				cursor: pointer
+			&.is_active
+				background: #f2f2f2
+				a
+					color: $dark-blue
+
+			a
+				text-decoration: none
+				color: $dark-blue
+				@include adjust-font-size-to(14px)
+				text-align: center
+
+		&.is_expanded
+			li
+				margin-top: 0
+			
+
+	//=================================
+	@include breakpoint($medium_device)
+
+		nav
+			position: relative
+			top: auto
+			left: auto
+			width: 100%
+
+		i#bt-expander
+			display: none
+		ul
+			display: block
+
+			li
+				display: inline-block
+				float: left
+				margin: 0 1px 0 0
+				padding: rhythm(.5)
+
+				a
+					text-align: left
+
+
+	//=================================
+	@include breakpoint($large_device)
+		i#bt-expander
+			display: none
+		ul
+			display: block
+
+			li
+				margin: 0
+				padding: rhythm(.5) 0
+				@include span(1 of 6 0)
+				border: none
+				&:last-child
+					@include omega
+
+
+//=================================================
+//=================================================
+#m-footer, #footer
+	@include drawRoundedBlock(4px, none, .6)
+	@include trailer
+	
+

@@ -1,0 +1,38 @@
+#m-graphic
+	width: 672px
+	height: 658px
+	margin: 70px 0 0 23px
+	@include rotate()
+	
+	div
+		@include clearfix()
+		float: left
+		width: 7.14285%
+		height: 50%
+		color: $white
+		text-indent: -9999em
+
+		// black bars
+		&:nth-child(3n+1)
+			background: $black
+			width: 14.28571%
+			height: 100%
+		
+		// red bars
+		&:nth-child(3n+2)
+			//background: $red
+			$svg-gradient-shim-threshold: 1 !global
+			@include background-image(linear-gradient(315deg, $red, $pale-red 15%, $red 70%))
+			&:nth-child(odd)
+				margin-top: 25%
+				//background: $pale-red
+
+		// green bars
+		&:nth-child(3n+3)
+			$svg-gradient-shim-threshold: 1 !global
+			@include background-image(linear-gradient(315deg, $green, $pale-green 15%, $green 70%))
+			margin-top: 49%
+			&:nth-child(odd)
+				margin-top: 25%
+				
+

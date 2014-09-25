@@ -1,0 +1,37 @@
+
+//======================== 
+@import "compass";
+@import "susy";
+@import "breakpoint";
+@import "sassy-buttons";
+
+//======================== 
+@import "utils/web-font";
+@import "utils/mixins";
+@import "core/fonts";
+@import "core/settings";
+@import "core/form";
+@import "core/layout";
+
+
+
+
+// -------------------------------------
+//   Body
+// -------------------------------------
+@include web-fonts("Open Sans", ("Source Sans Pro": ("400")));
+
+body{
+    @include establish-baseline;
+     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+    @include breakpoint($large_device){
+        max-width: 90%;
+        margin: 0 auto;
+    }
+    
+    @include breakpoint($big_device){
+        max-width: 75%;
+        margin: 0 auto;
+    }    
+}

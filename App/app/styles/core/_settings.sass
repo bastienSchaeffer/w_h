@@ -1,0 +1,104 @@
+// *************************************
+//
+//   Settings
+//   -> Fonts, Variables
+//
+// *************************************
+
+// -------------------------------------
+//   Variables
+// -------------------------------------
+
+// ----- Base Colors ----- //
+$base-background: #fff
+$base-color: #222
+$base-link-color: #0053c9
+$base-opacity-color: 1
+$white: #fff
+$black: #191a1a
+$blue: #00afc4
+$blue-grey: #283136
+$dark-blue: #333 //rgba(18, 27, 33, $base-opacity-color) //#121b21
+$yellow: #ffc618
+$grey: #c4cbcf
+$light-grey: #edf3f3
+$dark_grey: #777
+
+
+// ----- Base Borders & Box Shadows ----- //
+$base-border: 1px solid $base-color
+$base-largeRadius: 6px
+$base-boxShadow: 0 1px 2px rgba($base-color, 0.25)
+
+// ----- Base Content ----- //
+$base-fontFamily: sans-serif
+$base-font-size: 14px
+$base-line-height: 20px
+@include establish-baseline
+
+// ----- Base Layout ----- //
+$base-whitespace: 20px
+
+// ----- Layout ----- //
+$small_device: 600px
+$medium_device: 600px
+$large_device: 800px
+$big_device: 1024px
+
+
+// -------------------------------------
+//   Headings
+// -------------------------------------
+h1, h2, h3, h4, h5, h6
+	font-family: "Source Sans Pro"
+	font-weight: bold
+	color: #333
+	
+
+h1
+	@include adjust-font-size-to(40px)
+
+h2
+	@include adjust-font-size-to(35px)
+
+h3
+	@include adjust-font-size-to(30px)
+
+h4
+	@include adjust-font-size-to(25px)
+
+h5
+	@include adjust-font-size-to(42px)
+
+h6
+	@include adjust-font-size-to(16px)
+
+
+p, a, label, input
+	@include adjust-font-size-to(14px)
+	text-rendering: optimizelegibility
+
+
+
+// -------------------------------------
+//   
+// -------------------------------------
+*
+	margin: 0
+	padding: 0
+
+h1, h2, h3, h4, h5, h6, p, figure
+	margin: 0
+	padding: 0
+	text-rendering: optimizelegibility
+
+img
+	max-width: 100%
+
+ul
+	list-style-type: none
+
+*, *:before, *:after
+	-moz-box-sizing: border-box
+	-webkit-box-sizing: border-box
+	box-sizing: border-box

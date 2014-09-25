@@ -1,0 +1,114 @@
+/* line 27, sass/core/settings.scss */
+* {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+/* line 1, sass/core/_layout.sass */
+#reference {
+  float: left;
+  margin-right: 20px;
+}
+
+/* line 5, sass/core/_layout.sass */
+#poster {
+  width: 716px;
+  height: 1000px;
+  background: #aaacb2;
+  position: relative;
+  overflow: hidden;
+  *zoom: 1;
+}
+
+/* line 1, sass/modules/_m-graphic.sass */
+#m-graphic {
+  width: 672px;
+  height: 658px;
+  margin: 70px 0 0 23px;
+  -moz-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+/* line 7, sass/modules/_m-graphic.sass */
+#m-graphic div {
+  overflow: hidden;
+  *zoom: 1;
+  float: left;
+  width: 7.14285%;
+  height: 50%;
+  color: white;
+  text-indent: -9999em;
+}
+/* line 16, sass/modules/_m-graphic.sass */
+#m-graphic div:nth-child(3n+1) {
+  background: black;
+  width: 14.28571%;
+  height: 100%;
+}
+/* line 22, sass/modules/_m-graphic.sass */
+#m-graphic div:nth-child(3n+2) {
+  background-image: -moz-linear-gradient(135deg, #480001, #620406 15%, #480001 70%);
+  background-image: -webkit-linear-gradient(135deg, #480001, #620406 15%, #480001 70%);
+  background-image: linear-gradient(315deg, #480001, #620406 15%, #480001 70%);
+}
+/* line 26, sass/modules/_m-graphic.sass */
+#m-graphic div:nth-child(3n+2):nth-child(odd) {
+  margin-top: 25%;
+}
+/* line 31, sass/modules/_m-graphic.sass */
+#m-graphic div:nth-child(3n+3) {
+  background-image: -moz-linear-gradient(135deg, #1a2f17, #4c5e34 15%, #1a2f17 70%);
+  background-image: -webkit-linear-gradient(135deg, #1a2f17, #4c5e34 15%, #1a2f17 70%);
+  background-image: linear-gradient(315deg, #1a2f17, #4c5e34 15%, #1a2f17 70%);
+  margin-top: 49%;
+}
+/* line 35, sass/modules/_m-graphic.sass */
+#m-graphic div:nth-child(3n+3):nth-child(odd) {
+  margin-top: 25%;
+}
+
+/* line 1, sass/modules/_m-content.sass */
+#m-content {
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 20px;
+  position: absolute;
+  bottom: 20px;
+}
+/* line 12, ../../../../../../Library/Ruby/Gems/2.0.0/gems/susy-2.1.3/sass/susy/output/support/_clearfix.scss */
+#m-content:after {
+  content: " ";
+  display: block;
+  clear: both;
+}
+/* line 8, sass/modules/_m-content.sass */
+#m-content p {
+  margin: 0;
+  padding: 0;
+  color: #1a2f17;
+  width: 23.80952%;
+  float: left;
+  margin-right: 1.5873%;
+  font-size: 14px;
+}
+/* line 15, sass/modules/_m-content.sass */
+#m-content p:last-child {
+  float: right;
+  margin-right: 0;
+}
+
+/* line 18, sass/modules/_m-content.sass */
+span.mention {
+  display: inline-block;
+  -moz-transform: rotate(-90deg);
+  -ms-transform: rotate(-90deg);
+  -webkit-transform: rotate(-90deg);
+  transform: rotate(-90deg);
+  position: absolute;
+  right: -10px;
+  bottom: 55px;
+  font-size: 7px;
+}

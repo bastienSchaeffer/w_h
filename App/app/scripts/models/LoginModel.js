@@ -17,24 +17,24 @@ define([
         validate: function(attrs) {
             var errors = [];
 
-            if (attrs.username !== "username") {
+            if (attrs.username !== 'admin') {
                 errors.push({name: 'username', message: 'Please provide a correct username.'});
-                $('#username').addClass("is_invalid");
+                $('#username').addClass('is_invalid');
             }else{
-                $('#username').removeClass("is_invalid");
+                $('#username').removeClass('is_invalid');
             }
 
-            if (attrs.password !== "password") {
+            if (attrs.password !== 'password') {
                 errors.push({name: 'password', message: 'Please provide a correct password.'});
-                $('#password').addClass("is_invalid");
+                $('#password').addClass('is_invalid');
             }else{
-                $('#password').removeClass("is_invalid");
+                $('#password').removeClass('is_invalid');
             }
      
             if ( errors.length ) {
-                this.displayError(errors)
+                this.displayError(errors);
             }else{
-                $("#m-login").fadeOut(function(){
+                $('#m-login').fadeOut(function(){
                     new LogedinView();
                 });
             }
@@ -42,7 +42,7 @@ define([
         },
 
 
-        parse: function(response, options)  {
+        parse: function(response)  {
             return response;
         }
 

@@ -20,12 +20,10 @@
 		
 		// red bars
 		&:nth-child(3n+2)
-			//background: $red
 			$svg-gradient-shim-threshold: 1 !global
 			@include background-image(linear-gradient(315deg, $red, $pale-red 15%, $red 70%))
 			&:nth-child(odd)
 				margin-top: 25%
-				//background: $pale-red
 
 		// green bars
 		&:nth-child(3n+3)

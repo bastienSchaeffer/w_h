@@ -3,6 +3,8 @@
 define([
     'jquery',
     'backbone',
+    'picturefill',
+    'swipe',
     //Views
     'views/HeaderView',
     'views/AsideView',
@@ -12,8 +14,10 @@ define([
     //cpt
     'components/FeaturesCptView'
 ], function (
-    $, 
+    $,
     Backbone,
+    picturefill,
+    swipe,
     //Views
     HeaderView,
     AsideView,
@@ -35,9 +39,9 @@ define([
             new HeaderView();
             new AsideView();
             new FormView();
-            new ContentView();
             var featuresCptView = new FeaturesCptView();
             featuresCptView.render();
+            new ContentView();
             new FooterView();
         }
 

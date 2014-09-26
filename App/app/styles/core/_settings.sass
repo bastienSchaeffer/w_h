@@ -35,6 +35,7 @@ $base-fontFamily: sans-serif
 $base-font-size: 14px
 $base-line-height: 20px
 @include establish-baseline
+$rhythm-unit: rem
 
 // ----- Base Layout ----- //
 $base-whitespace: 20px
@@ -44,7 +45,13 @@ $small_device: 600px
 $medium_device: 600px
 $large_device: 800px
 $big_device: 1024px
+$very_big_device: 1400px
 
+
+// -------------------------------------
+//   Fonts
+// -------------------------------------
+@import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700)
 
 // -------------------------------------
 //   Headings
@@ -74,9 +81,9 @@ h6
 	@include adjust-font-size-to(16px)
 
 
-p, a, label, input
+p, a, label, input, i
 	@include adjust-font-size-to(14px)
-	text-rendering: optimizelegibility
+	
 
 
 
@@ -86,14 +93,15 @@ p, a, label, input
 *
 	margin: 0
 	padding: 0
+	text-rendering: optimizelegibility
 
 h1, h2, h3, h4, h5, h6, p, figure
 	margin: 0
 	padding: 0
-	text-rendering: optimizelegibility
 
 img
 	max-width: 100%
+
 
 ul
 	list-style-type: none

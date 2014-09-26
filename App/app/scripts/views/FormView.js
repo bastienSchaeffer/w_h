@@ -18,16 +18,15 @@ define([
         model: new LoginModel(),
 
         events: {
-            "submit": "login"
+            'submit': 'login'
         },
 
 
         login: function (e) {
             e.preventDefault();
-            var username_val = $("#username").val(),
-                password_val = $("#password").val();
-            var that = this;
-            this.model.validate({username: username_val, password: password_val})
+            var usernameVal = $('#username').val(),
+                passwordVal = $('#password').val();
+            this.model.validate({username: usernameVal, password: passwordVal});
         },
 
 

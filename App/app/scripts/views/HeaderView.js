@@ -21,13 +21,13 @@ define([
         onNavigationItemClick: function( e ){
             e.preventDefault();
             $('.is_expanded').removeClass('is_expanded');
-            $('.is_active').removeClass('is_active');
+            $('#header .is_active').removeClass('is_active');
             $(e.currentTarget).addClass('is_active');
         },
 
         onExpandItemClick: function( e ){
             e.preventDefault();
-            this.$el.find('ul').toggleClass("is_expanded");
+            this.$el.find('ul').toggleClass('is_expanded');
         },
 
         initialize: function () {

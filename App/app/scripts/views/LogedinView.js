@@ -20,7 +20,7 @@ define([
         onLogOut: function( e ){
             e.preventDefault();
             $(e.currentTarget).parent().parent().fadeOut(function(){
-                $("#m-login").fadeIn();
+                $('#m-login').fadeIn();
             });
         },
 

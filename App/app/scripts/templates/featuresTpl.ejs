@@ -1,13 +1,60 @@
 <section id="m-gallery">
-<h3>Features</h3>
-<ul><% _.each(features, function(feature){ %>
-    <li>
-    	<h4><%= feature.featureTitle%><%= feature.id %> </h4>
-        <figure>
-	      <img src="http://placehold.it/480x160" alt="">
-	      <figcaption> <%= feature.featureCopy %></figcaption>
-	    </figure>
-    </li>
-<%});%></ul>
+
+	<div id="slider">
+
+		<div class="device">
+			<a class="arrow-left" href="#"></a> 
+			<a class="arrow-right" href="#"></a>
+			
+			<div class="swiper-container">
+			  <div class="swiper-wrapper">
+
+			  	<% _.each(features, function(feature, i){ %>
+
+			    <div class="swiper-slide">
+			    	<h3><%= feature.featureTitle %></h3>
+			    	<div class="shot">
+			        <figure>
+						<picture>
+						<!--[if IE 9]><video style="display: none;"><![endif]-->
+						<source srcset="images/features/<%= feature.featureImage %>_medium<%= feature.featureImExt %>" media="(min-width: 800px)">
+						<!--[if IE 9]></video><![endif]-->
+						<img srcset="images/features/<%= feature.featureImage %>_small<%= feature.featureImExt %>" alt="<%= feature.featureTitle %>">
+						</picture>
+				    </figure>
+				    </div>
+				    <p><%= feature.featureCopy %></p>
+
+			    </div>
+
+
+			    <%});%>
+
+			  </div>
+			</div>
+
+			<div class="pagination"></div>
+		</div>
+
+
+	</div>
+
+	<ul><% _.each(features, function(feature, i){ %>
+	    <li id="<%= i %>">
+	    	<h4><%= feature.featureTitle %></h4>
+	        <figure>
+		      <picture>
+				<!--[if IE 9]><video style="display: none;"><![endif]-->
+				<source srcset="images/features/<%= feature.featureImage %>_medium<%= feature.featureImExt %>" media="(min-width: 800px)">
+				<!--[if IE 9]></video><![endif]-->
+				<img srcset="images/features/<%= feature.featureImage %>_small<%= feature.featureImExt %>" alt="<%= feature.featureTitle %>">
+			</picture>
+		    </figure>
+	    </li>
+	<%});%></ul>
+
+
+	<div id="promoted_feature"></div>
+
 </section>
 

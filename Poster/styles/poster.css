@@ -6,15 +6,29 @@
 }
 
 /* line 1, sass/core/_layout.sass */
+body {
+  background: black;
+}
+
+/* line 4, sass/core/_layout.sass */
+h1 {
+  text-align: center;
+  font-family: sans-serif;
+  color: #aaacb2;
+  font-weight: normal;
+}
+
+/* line 10, sass/core/_layout.sass */
 #reference {
   float: left;
   margin-right: 20px;
 }
 
-/* line 5, sass/core/_layout.sass */
+/* line 14, sass/core/_layout.sass */
 #poster {
   width: 716px;
   height: 1000px;
+  margin: 20px auto;
   background: #aaacb2;
   position: relative;
   overflow: hidden;
@@ -53,18 +67,18 @@
   background-image: -webkit-linear-gradient(135deg, #480001, #620406 15%, #480001 70%);
   background-image: linear-gradient(315deg, #480001, #620406 15%, #480001 70%);
 }
-/* line 26, sass/modules/_m-graphic.sass */
+/* line 25, sass/modules/_m-graphic.sass */
 #m-graphic div:nth-child(3n+2):nth-child(odd) {
   margin-top: 25%;
 }
-/* line 31, sass/modules/_m-graphic.sass */
+/* line 29, sass/modules/_m-graphic.sass */
 #m-graphic div:nth-child(3n+3) {
   background-image: -moz-linear-gradient(135deg, #1a2f17, #4c5e34 15%, #1a2f17 70%);
   background-image: -webkit-linear-gradient(135deg, #1a2f17, #4c5e34 15%, #1a2f17 70%);
   background-image: linear-gradient(315deg, #1a2f17, #4c5e34 15%, #1a2f17 70%);
   margin-top: 49%;
 }
-/* line 35, sass/modules/_m-graphic.sass */
+/* line 33, sass/modules/_m-graphic.sass */
 #m-graphic div:nth-child(3n+3):nth-child(odd) {
   margin-top: 25%;
 }

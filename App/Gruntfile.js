@@ -238,7 +238,7 @@ module.exports = function (grunt) {
                     src: [
                         '*.{ico,txt}',
                         '.htaccess',
-                        'images/{,*/}*.{webp,gif}',
+                        'images/{,*/}*.{jpg,png,ico,webp,gif}',
                         'styles/fonts/{,*/}*.*',
                         'data/{,*/}*.*',
                         'bower_components/sass-bootstrap/fonts/*.*'
@@ -340,7 +340,7 @@ module.exports = function (grunt) {
         'compass:dist',
         'useminPrepare',
         'requirejs',
-        'imagemin',
+        //'imagemin',
         'htmlmin',
         'concat',
         'cssmin',

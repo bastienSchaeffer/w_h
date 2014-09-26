@@ -4,48 +4,38 @@
 //
 // *************************************
 
-//=================================================
-//=================================================
-#m-gallery
-	ul
-		li
-			width: 100%
-			float: left
-			padding: rhythm(.5)
 
-		@include breakpoint($medium_device)
-			li
-				width: 50%
-		@include breakpoint($large_device)
-			li
-				width: 33.3333%
+// ===================================
+//   HEADER
+// ===================================
+.svg
+	#header h1
+		background: url(../images/logo.svg) top left no-repeat
+		background-size: contain
+		img
+			display: none
+.no-svg
+	#header h1 img
+		width: 100%
 
 
-
-//=================================================
-//=================================================	
-#m-content, #m-content
-	@include clearfix
-	section
-		@include drawRoundedBlock(4px, none, .6)
-
-		//================
-		article
-			@include defineCol(4)
-			h4
-				@include text-shadow(#fff 0px 1px 0)
-				
-
-//=================================================
-//=================================================
 #header
 	@include drawRoundedBlock(4px, none, 0)
 	@include clearfix
 	position: relative
 	h1
 		color: $dark-blue
-		padding: 0
-		//padding: rhythm(.5) 0
+		margin: rhythm(.5)
+		text-indent: -9999em
+		width: 30%
+		//=================================
+		@include breakpoint(350px)
+			width: 40%
+		//=================================
+		@include breakpoint($medium_device)
+			width: 40%
+			margin: 1em 1em 1em .5em
+
 
 
 	#user
@@ -58,7 +48,14 @@
 			top: 0
 			right: 0
 			@include box-shadow(#ccc 0 0 6px)
+			i
+				float: left
+				@extend .picto
+				@extend .icon-user
+				margin-right: rhythm(.25)
+
 			p
+				float: left
 				color: $dark_grey
 				a
 					color: $dark_grey
@@ -67,78 +64,9 @@
 
 
 
-//=================================================
-//=================================================
-#main
-	@include container
-	position: relative
-
-	aside
-		background: $dark-blue
-		@include transition(all .5s ease-out)
-		position: absolute
-		left: -200px
-		width: 232px
-		height: 100%
-
-		&.is_open
-			left: 0
-
-		&.is_fixed
-			position: fixed
-			top: 0
-
-		#bt-subnav
-			@extend .picto
-			@extend .icon-menu
-			color: $dark_grey
-			float: right
-			padding: rhythm(.2)
-			margin-right: rhythm(.3)
-
-		ul
-			clear: both		
-			li
-				display: block
-				padding: rhythm(.5)
-
-				a
-					text-decoration: none
-					color: $dark_grey
-
-	#m-content
-		@include transition(all .5s ease-out)
-		margin-left: 2em
-		
-
-
-	//=================================
-	@include breakpoint($large_device)
-		aside
-			background: none
-			position: relative
-			left: auto
-			@include span(1 of 4 0)
-
-			&.is_fixed
-				@include transition(all 0 ease-out)
-				@include span(1 of 5 1/8)
-
-			ul
-				li
-					@include drawRoundedBlock(4px, none, .2)
-
-			#bt-subnav
-				display: none
-		#m-content
-			margin-left: 0
-			@include span(3 of 4)
-			@include omega
-
-
-//=================================================
-//=================================================
-
+// ===================================
+//   MAIN NAV
+// ===================================
 #m-main-nav
 	clear: both
 	@include clearfix()
@@ -147,10 +75,10 @@
 	
 	nav
 		width: 100%
-		z-index: 10
+		margin-top: -20px
 
 	i#bt-expander
-		color: $dark_grey
+		color: $dark_blue
 		@include adjust-font-size-to(32px)
 		display: inline-block
 		float: right
@@ -158,6 +86,7 @@
 		@include clearfix()
 		@extend .picto
 		@extend .icon-menu
+		cursor: pointer
 
 	// This is the nav ul
 	ul
@@ -167,7 +96,7 @@
 		li
 			text-align: center
 			padding: rhythm(.5) 0 
-			@include transition(all .2s ease-out)
+			@include transition(all .2s ease)
 			@include sassy-button("simple", 0, 1em, #f2f2f2)
 			display: block
 			margin-top: -50px
@@ -175,9 +104,9 @@
 			&:hover, 
 				cursor: pointer
 			&.is_active
-				background: #f2f2f2
+				background: $dark_blue
 				a
-					color: $dark-blue
+					color: $white
 
 			a
 				text-decoration: none
@@ -198,6 +127,7 @@
 			top: auto
 			left: auto
 			width: 100%
+			margin-top: 0
 
 		i#bt-expander
 			display: none
@@ -229,9 +159,179 @@
 				&:last-child
 					@include omega
 
+// ===================================
+//   m-content
+// ===================================	
+#m-content,
+	@include clearfix
+	section
+		@include drawRoundedBlock(4px, none, .6)
 
-//=================================================
-//=================================================
+		//================
+		article
+			@include defineCol(4)
+			h4
+				@include text-shadow(#fff 0px 1px 0)
+
+
+
+
+// ===================================
+//   promoted / gallery
+// ===================================
+#promoted_feature, #slider
+	clear: both
+	padding-bottom: 1em
+	margin-bottom: 1em
+	@include css3ShadowPara(160%, 10px, 100%, -30%)
+
+	.shot, p
+		text-align: center
+	p
+		padding: 0 2em
+		text-align: center
+		font-family: "Source Sans Pro", sans-serif
+
+
+
+
+#m-gallery
+	@include clearfix
+	ul
+		li
+			width: 100%
+			float: left
+			padding: rhythm(.5)
+
+			h4
+				color: #2dc9fb
+
+		@include breakpoint($medium_device)
+			li
+				width: 50%
+		@include breakpoint($very_big_device)
+			li
+				width: 33.3333%
+
+
+
+
+				
+
+
+// ===================================
+//   Main
+// ===================================
+#main
+	@include container
+	position: relative
+
+	aside
+		background: $white
+		@include transition(all 0 ease)
+		position: absolute
+		z-index: 10
+		left: -200px
+		width: 200px
+		height: auto
+
+		#bt-subnav
+			color: $dark-blue
+			padding: rhythm(.2)
+			width: 38px
+			height: 38px
+			position: absolute
+			right: -38px
+			top: 0
+			background: $white
+			line-height: 1
+			text-align: center
+			@include border-top-right-radius(3px)
+			@include border-bottom-right-radius(3px)
+			@include box-shadow(#ccc 0 0 6px)
+			cursor: pointer
+
+			i
+				@extend .picto
+				@extend .icon-menu
+				font-size: 28px
+				line-height: 1
+			span
+				display: none
+			
+
+
+		&.is_open
+			left: 0
+			@include transition(all .15s ease)
+			@include box-shadow(#ccc 0 0 6px)
+			#bt-subnav
+				i
+					@extend .icon-x
+
+		ul
+			clear: both		
+			li
+				display: block
+				padding: rhythm(.5)
+				padding-left: 1em
+				display: block
+				border-bottom: solid 1px $dark_grey
+				cursor: pointer
+				@include transition(all .1s ease)
+
+				&:hover, &.is_active
+					background: $dark_blue
+					border-left: solid 4px #2dc9fb
+					a
+						color: $white
+				&.is_active
+					border-left: solid 2px #2dc9fb
+
+				a
+					font-family: "Source Sans Pro", sans-serif
+					font-weight: 700
+					text-decoration: none
+					color: $dark_grey
+
+
+	#m-content
+		@include transition(all .15s ease-out)
+		padding-top: 48px
+		
+
+	//=================================
+	@include breakpoint($large_device)
+		aside
+			@include box-shadow(none!important)
+			@include transition(all 0 ease-out)
+			position: relative
+			left: auto
+			@include span(1 of 4 0)
+			height: auto
+
+			ul
+				li
+					@include drawRoundedBlock(2px, none, .2)
+					padding-left: 2em
+
+			#bt-subnav
+				display: none
+		#m-content
+			padding-top: 0
+			margin-left: 0
+			@include span(3 of 4)
+			@include omega
+
+
+
+
+
+
+
+// ===================================
+//   FOOTER
+// ===================================
 #m-footer, #footer
 	@include drawRoundedBlock(4px, none, .6)
 	@include trailer

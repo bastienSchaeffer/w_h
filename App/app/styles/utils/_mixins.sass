@@ -5,7 +5,7 @@
 	background: $background-color
 	color: $dark_grey
 	@include border-top-radius($base-largeRadius)
-	@include border-bottom-radius($base-largeRadius*2)
+	@include border-bottom-radius($base-largeRadius)
 	@include clearfix()
 	border: solid 1px #d4d4d4
 	border-bottom-width: $border-bottom-size
@@ -24,3 +24,49 @@
 		@include span($number of 12)
 		&:last-child
 			@include omega
+
+
+//===================================================== DRAWBODY
+@mixin css3ShadowPara($width, $height, $top, $left)
+	
+	position: relative
+	
+	&:after
+		content: ""
+		position: absolute
+		z-index: 0
+		top: $top
+		width: $width
+		height: $height
+		left: $left
+		background: -webkit-radial-gradient(50% -3%, ellipse cover, rgba(00, 00, 00, 0.5), rgba(97, 97, 97, 0.0) 40%)
+		background:  radial-gradient(ellipse at 50% -3%, rgba(00, 00, 00, 0.5), rgba(97, 97, 97, 0.0) 40%)
+
+//===================================================== DRAWBODY
+@function strip-unit($num) 
+	@return $num / ($num * 0 + 1)
+
+
+@mixin rem-fallback($property, $values...) 
+	$max: length($values)
+	$pxValues: ''
+	$remValues: ''
+
+	@for $i from 1 through $max
+		$value: strip-unit(nth($values, $i))
+		$pxValues: #{$pxValues + $value*16}px
+
+		@if $i < $max
+			$pxValues: #{$pxValues + " "}
+
+
+	@for $i from 1 through $max
+		$value: strip-unit(nth($values, $i))
+		$remValues: #{$remValues + $value}rem
+
+		@if $i < $max
+			$remValues: #{$remValues + " "}
+
+  
+	#{$property}: $pxValues
+	#{$property}: $remValues

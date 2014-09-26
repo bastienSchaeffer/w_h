@@ -1,0 +1,15 @@
+<h2><%= feature.featureTitle %></h2>
+<div class="shot">
+	<picture>
+		<!--[if IE 9]><video style="display: none;"><![endif]-->
+		<source srcset="images/features/<%= feature.featureImage %><%= feature.featureImExt %>" media="(min-width: 1000px)">
+		<source srcset="images/features/<%= feature.featureImage %>_medium<%= feature.featureImExt %>" media="(min-width: 800px)">
+		<!--[if IE 9]></video><![endif]-->
+		<img srcset="images/features/<%= feature.featureImage %>_small<%= feature.featureImExt %>" alt="<%= feature.featureTitle %>">
+	</picture>
+</div>
+<p><%= feature.featureCopy %></p>
+
+
+
+

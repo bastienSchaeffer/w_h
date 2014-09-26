@@ -1,4 +1,3 @@
 w_h
 ===
-
-Tests
+Contains the poster and the responsive app
